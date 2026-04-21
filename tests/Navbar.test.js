@@ -14,7 +14,10 @@ describe('Navbar.vue', () => {
           $route,
           $router,
         },
-        stubs: ['router-link', 'router-view'],
+        stubs: {
+          'router-link': { template: '<a><slot /></a>' },
+          'router-view': true,
+        },
       },
     });
     expect(wrapper.text()).toContain('SIAC');
